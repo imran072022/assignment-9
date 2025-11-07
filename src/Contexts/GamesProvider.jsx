@@ -5,10 +5,14 @@ const GamesProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
-    fetch("games.json")
+    fetch("/games.json")
       .then((res) => res.json())
       .then((data) => {
         setGames(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
         setLoading(false);
       });
   }, []);

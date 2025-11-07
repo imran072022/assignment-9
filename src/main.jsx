@@ -10,6 +10,7 @@ import Games from "./Pages/Games";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import GamesProvider from "./Contexts/GamesProvider";
+import GameDetails from "./Pages/GameDetails";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+      {
+        path: "game-details/:id",
+        element: <GameDetails></GameDetails>,
       },
     ],
   },

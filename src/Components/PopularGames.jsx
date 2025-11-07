@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
 import { GamesContext } from "../Contexts/GamesProvider";
 import Loading from "./Loading";
+import GameCard from "./GameCard";
+import { Link } from "react-router";
 
 const PopularGames = () => {
   const { games, loading } = useContext(GamesContext);
+  if (!games) return null;
+  const sortedGames = [...games].sort((a, b) => b.ratings - a.ratings);
+  const topRatedGames = sortedGames.slice(0, 7);
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -13,12 +18,19 @@ const PopularGames = () => {
       {loading ? (
         <Loading></Loading>
       ) : (
-        <div>
-          {games.map((game) => (
-            <h2>{game.title}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+          {topRatedGames.map((game) => (
+            <GameCard key={game.id} game={game}></GameCard>
           ))}
         </div>
       )}
+
+      <div className="my-8 text-center">
+        {" "}
+        <Link className="inline-block bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] px-6 py-3 rounded-md text-white font-medium hover:scale-105 transition-transform">
+          Explore More
+        </Link>
+      </div>
     </div>
   );
 };

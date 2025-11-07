@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "Player Unknown's Battlegrounds: PUBG",
-    "coverPhoto": "https://example.com/images/pubg.png",
+    "coverPhoto": "https://i.ibb.co.com/TM7XjM0X/pubg-1.png",
     "category": "FPS",
     "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
     "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
@@ -12,7 +12,7 @@
   {
     "id": "2",
     "title": "Clash of Clans",
-    "coverPhoto": "https://example.com/images/coc.png",
+    "coverPhoto": "https://i.ibb.co.com/HfqyPrk4/coc-1.png",
     "category": "Strategy",
     "downloadLink": "https://supercell.com/en/games/clashofclans/",
     "description": "Build your village, train your army, and clash with millions of players worldwide in this classic strategy game.",
@@ -22,7 +22,7 @@
   {
     "id": "3",
     "title": "Clash Royale",
-    "coverPhoto": "https://example.com/images/clashroyale.png",
+    "coverPhoto": "https://i.ibb.co.com/NnFghGpb/cr.webp",
     "category": "Card Strategy",
     "downloadLink": "https://supercell.com/en/games/clashroyale/",
     "description": "Collect cards, build battle decks, and challenge opponents in fast-paced real-time strategy duels.",
@@ -32,7 +32,7 @@
   {
     "id": "4",
     "title": "Lords Mobile",
-    "coverPhoto": "https://example.com/images/lordsmobile.png",
+    "coverPhoto": "https://i.ibb.co.com/vCFV0Zw7/lm-1.png",
     "category": "RPG Strategy",
     "downloadLink": "https://lordsmobile.igg.com/",
     "description": "Build your empire, train heroes, and engage in massive battles with millions of players around the world.",
@@ -42,7 +42,7 @@
   {
     "id": "5",
     "title": "Free Fire",
-    "coverPhoto": "https://example.com/images/freefire.png",
+    "coverPhoto": "https://i.ibb.co.com/1Gnd4N7L/ff.webp",
     "category": "Battle Royale",
     "downloadLink": "https://ff.garena.com/en/",
     "description": "Free Fire is a survival shooter game set on a remote island where players fight to be the last one standing.",
@@ -52,7 +52,7 @@
   {
     "id": "6",
     "title": "Modern Combat 5: Blackout",
-    "coverPhoto": "https://example.com/images/moderncombat5.png",
+    "coverPhoto": "https://i.ibb.co.com/FkH6ZLXM/modern-Combat.webp",
     "category": "FPS",
     "downloadLink": "https://www.gameloft.com/en/game/modern-combat-5/",
     "description": "Experience high-powered FPS action with console-quality graphics and intense multiplayer gameplay.",
@@ -62,7 +62,7 @@
   {
     "id": "7",
     "title": "Shadow Fight 2",
-    "coverPhoto": "https://example.com/images/shadowfight2.png",
+    "coverPhoto": "https://i.ibb.co.com/4Rwt40Dh/shadow-FIght2-1.png",
     "category": "Fighting",
     "downloadLink": "https://nekki.com/games/shadowfight2/",
     "description": "Enter the world of shadows and fight powerful enemies using martial arts, weapons, and magic.",
@@ -72,7 +72,7 @@
   {
     "id": "8",
     "title": "Hay Day",
-    "coverPhoto": "https://example.com/images/hayday.png",
+    "coverPhoto": "https://i.ibb.co.com/6JXjW64B/hayday-1.png",
     "category": "Simulation",
     "downloadLink": "https://supercell.com/en/games/hayday/",
     "description": "Build and manage your dream farm, trade goods, and interact with friendly neighbors in this popular farming sim.",
@@ -82,7 +82,7 @@
   {
     "id": "9",
     "title": "Boom Beach",
-    "coverPhoto": "https://example.com/images/boombeach.png",
+    "coverPhoto": "https://i.ibb.co.com/zVXWS7Nq/boom-Beach.webp",
     "category": "Strategy",
     "downloadLink": "https://supercell.com/en/games/boombeach/",
     "description": "Command your troops and heroes to attack enemy bases and free enslaved islanders in this tropical strategy game.",
@@ -92,7 +92,7 @@
   {
     "id": "10",
     "title": "SimCity BuildIt",
-    "coverPhoto": "https://example.com/images/simcitybuildit.png",
+    "coverPhoto": "https://i.ibb.co.com/tM444GVt/simcity.webp",
     "category": "Simulation",
     "downloadLink": "https://www.ea.com/games/simcity/simcity-buildit",
     "description": "Design, build, and manage your own thriving city with stunning graphics and endless creativity.",
@@ -102,7 +102,7 @@
   {
     "id": "11",
     "title": "Modern Warships",
-    "coverPhoto": "https://example.com/images/modernwarships.png",
+    "coverPhoto": "https://i.ibb.co.com/8g0tXrpH/naval-Warship.png",
     "category": "Naval Combat",
     "downloadLink": "https://cube-software.com/modern-warships",
     "description": "Take command of modern warships and engage in realistic online naval battles across the seas.",
@@ -112,11 +112,21 @@
   {
     "id": "12",
     "title": "Brawl Stars",
-    "coverPhoto": "https://example.com/images/brawlstars.png",
+    "coverPhoto": "https://i.ibb.co.com/35pm0HWY/bs-1.png",
     "category": "Action",
     "downloadLink": "https://supercell.com/en/games/brawlstars/",
     "description": "Battle with friends or solo in fast-paced multiplayer modes full of fun characters and chaotic action.",
     "ratings": "4.6",
     "developer": "Supercell"
+  },
+  {
+    "id": "13",
+    "title": "Mobile Legends: Bang Bang",
+    "coverPhoto": "https://i.ibb.co.com/R4bHQXSv/mlbb-1.png",
+    "category": "MOBA",
+    "downloadLink": "https://play.google.com/store/apps/details?id=com.mobile.legends",
+    "description": "Mobile Legends is a fast-paced MOBA where players form teams and battle in real-time 5v5 matches, featuring heroes with unique skills and strategies.",
+    "ratings": "4.3",
+    "developer": "Moonton"
   }
 ]
