@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Contexts/AuthProvider";
 import { useLocation, useNavigate } from "react-router";
-
+import { FcGoogle } from "react-icons/fc";
 const Login = () => {
-  const { signIn, setUser } = useContext(AuthContext);
+  const { signIn, setUser, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const handleLogin = (e) => {
@@ -18,6 +18,15 @@ const Login = () => {
         console.log(userCredential.user);
       })
       .catch((error) => console.log(error));
+  };
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((userCredential) => {
+        setUser(userCredential.user);
+        navigate("/");
+        console.log(userCredential.user);
+      })
+      .catch((error) => console.log(error.message));
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00385a] to-[#00738a]">
@@ -51,13 +60,17 @@ const Login = () => {
             />
           </div>
 
-          <button className="w-full py-2 mt-4 rounded-lg bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] text-white font-bold hover:brightness-110 transition">
+          <button className="w-full cursor-pointer py-2 mt-4 rounded-lg bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] font-bold hover:brightness-110 transition">
             Login
           </button>
 
-          <button className="w-full py-2 mt-2 rounded-lg border border-[#00A3FF] text-[#00A3FF] font-bold hover:bg-[#00A3FF] hover:text-[#111A2B] transition flex items-center justify-center gap-2">
+          <button
+            onClick={handleGoogleSignIn}
+            type="button"
+            className="w-full py-2 cursor-pointer mt-2 rounded-lg border border-[#00A3FF] text-[#00A3FF] font-bold hover:bg-[#00A3FF] hover:text-[#111A2B] transition flex items-center justify-center gap-2"
+          >
             {/* You can add a Google Icon here */}
-            Login with Google
+            <FcGoogle className="w-6 h-6" /> Continue with Google
           </button>
         </form>
 
