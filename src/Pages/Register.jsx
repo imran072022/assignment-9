@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../Contexts/AuthProvider";
 
 const Register = () => {
+  const { signUp, setUser } = useContext(AuthContext);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(name, photo, email, password);
+    signUp(email, password)
+      .then((userCredential) => {
+        setUser(userCredential.user);
+        console.log(userCredential.user);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00385a] to-[#00738a]">
       <div className="w-full max-w-md bg-[#111A2B] rounded-2xl shadow-2xl p-8">
@@ -8,7 +24,7 @@ const Register = () => {
           Register
         </h2>
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleRegister}>
           <div>
             <label className="block text-sm font-semibold text-gray-300">
               Name
@@ -16,6 +32,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Enter your name"
+              name="name"
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
@@ -27,6 +44,7 @@ const Register = () => {
             <input
               type="email"
               placeholder="Enter your email"
+              name="email"
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
@@ -38,6 +56,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Enter your photo URL"
+              name="photo"
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
@@ -49,6 +68,7 @@ const Register = () => {
             <input
               type="password"
               placeholder="Enter your password"
+              name="password"
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
             <p className="text-xs text-gray-500 mt-1">

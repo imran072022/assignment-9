@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../Contexts/AuthProvider";
+import { useLocation, useNavigate } from "react-router";
 
 const Login = () => {
+  const { signIn, setUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    signIn(email, password)
+      .then((userCredential) => {
+        setUser(userCredential.user);
+        navigate(`${location.state ? location.state : "/"}`);
+        console.log(userCredential.user);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00385a] to-[#00738a]">
       <div className="w-full max-w-md bg-[#111A2B] rounded-2xl shadow-2xl p-8">
@@ -8,7 +26,7 @@ const Login = () => {
           Login
         </h2>
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleLogin}>
           <div>
             <label className="block text-sm font-semibold text-gray-300">
               Email
@@ -16,6 +34,7 @@ const Login = () => {
             <input
               type="email"
               placeholder="Enter your email"
+              name="email"
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
@@ -27,6 +46,7 @@ const Login = () => {
             <input
               type="password"
               placeholder="Enter your password"
+              name="password"
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>

@@ -11,6 +11,8 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import GamesProvider from "./Contexts/GamesProvider";
 import GameDetails from "./Pages/GameDetails";
+import AuthProvider from "./Contexts/AuthProvider";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -37,15 +39,21 @@ const router = createBrowserRouter([
       },
       {
         path: "game-details/:id",
-        element: <GameDetails></GameDetails>,
+        element: (
+          <PrivateRoute>
+            <GameDetails></GameDetails>
+          </PrivateRoute>
+        ),
       },
     ],
   },
 ]);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <GamesProvider>
-      <RouterProvider router={router}></RouterProvider>
-    </GamesProvider>
+    <AuthProvider>
+      <GamesProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </GamesProvider>
+    </AuthProvider>
   </StrictMode>
 );
