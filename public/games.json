@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "title": "Player Unknown's Battlegrounds: PUBG",
+    "coverPhoto": "https://example.com/images/pubg.png",
+    "category": "FPS",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival, strategy, and victory on dynamic maps.",
+    "ratings": "4.5",
+    "developer": "Krafton"
+  },
+  {
+    "id": "2",
+    "title": "Clash of Clans",
+    "coverPhoto": "https://example.com/images/coc.png",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashofclans/",
+    "description": "Build your village, train your army, and clash with millions of players worldwide in this classic strategy game.",
+    "ratings": "4.6",
+    "developer": "Supercell"
+  },
+  {
+    "id": "3",
+    "title": "Clash Royale",
+    "coverPhoto": "https://example.com/images/clashroyale.png",
+    "category": "Card Strategy",
+    "downloadLink": "https://supercell.com/en/games/clashroyale/",
+    "description": "Collect cards, build battle decks, and challenge opponents in fast-paced real-time strategy duels.",
+    "ratings": "4.5",
+    "developer": "Supercell"
+  },
+  {
+    "id": "4",
+    "title": "Lords Mobile",
+    "coverPhoto": "https://example.com/images/lordsmobile.png",
+    "category": "RPG Strategy",
+    "downloadLink": "https://lordsmobile.igg.com/",
+    "description": "Build your empire, train heroes, and engage in massive battles with millions of players around the world.",
+    "ratings": "4.3",
+    "developer": "IGG"
+  },
+  {
+    "id": "5",
+    "title": "Free Fire",
+    "coverPhoto": "https://example.com/images/freefire.png",
+    "category": "Battle Royale",
+    "downloadLink": "https://ff.garena.com/en/",
+    "description": "Free Fire is a survival shooter game set on a remote island where players fight to be the last one standing.",
+    "ratings": "4.4",
+    "developer": "Garena"
+  },
+  {
+    "id": "6",
+    "title": "Modern Combat 5: Blackout",
+    "coverPhoto": "https://example.com/images/moderncombat5.png",
+    "category": "FPS",
+    "downloadLink": "https://www.gameloft.com/en/game/modern-combat-5/",
+    "description": "Experience high-powered FPS action with console-quality graphics and intense multiplayer gameplay.",
+    "ratings": "4.2",
+    "developer": "Gameloft"
+  },
+  {
+    "id": "7",
+    "title": "Shadow Fight 2",
+    "coverPhoto": "https://example.com/images/shadowfight2.png",
+    "category": "Fighting",
+    "downloadLink": "https://nekki.com/games/shadowfight2/",
+    "description": "Enter the world of shadows and fight powerful enemies using martial arts, weapons, and magic.",
+    "ratings": "4.6",
+    "developer": "Nekki"
+  },
+  {
+    "id": "8",
+    "title": "Hay Day",
+    "coverPhoto": "https://example.com/images/hayday.png",
+    "category": "Simulation",
+    "downloadLink": "https://supercell.com/en/games/hayday/",
+    "description": "Build and manage your dream farm, trade goods, and interact with friendly neighbors in this popular farming sim.",
+    "ratings": "4.5",
+    "developer": "Supercell"
+  },
+  {
+    "id": "9",
+    "title": "Boom Beach",
+    "coverPhoto": "https://example.com/images/boombeach.png",
+    "category": "Strategy",
+    "downloadLink": "https://supercell.com/en/games/boombeach/",
+    "description": "Command your troops and heroes to attack enemy bases and free enslaved islanders in this tropical strategy game.",
+    "ratings": "4.3",
+    "developer": "Supercell"
+  },
+  {
+    "id": "10",
+    "title": "SimCity BuildIt",
+    "coverPhoto": "https://example.com/images/simcitybuildit.png",
+    "category": "Simulation",
+    "downloadLink": "https://www.ea.com/games/simcity/simcity-buildit",
+    "description": "Design, build, and manage your own thriving city with stunning graphics and endless creativity.",
+    "ratings": "4.2",
+    "developer": "Electronic Arts"
+  },
+  {
+    "id": "11",
+    "title": "Modern Warships",
+    "coverPhoto": "https://example.com/images/modernwarships.png",
+    "category": "Naval Combat",
+    "downloadLink": "https://cube-software.com/modern-warships",
+    "description": "Take command of modern warships and engage in realistic online naval battles across the seas.",
+    "ratings": "4.4",
+    "developer": "Artstorm FZE"
+  },
+  {
+    "id": "12",
+    "title": "Brawl Stars",
+    "coverPhoto": "https://example.com/images/brawlstars.png",
+    "category": "Action",
+    "downloadLink": "https://supercell.com/en/games/brawlstars/",
+    "description": "Battle with friends or solo in fast-paced multiplayer modes full of fun characters and chaotic action.",
+    "ratings": "4.6",
+    "developer": "Supercell"
+  }
+]
