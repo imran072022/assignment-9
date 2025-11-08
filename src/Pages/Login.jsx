@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../Contexts/AuthProvider";
-import { useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 const Login = () => {
+  const [email, setEmail] = useState("");
   const { signIn, setUser, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -44,6 +45,8 @@ const Login = () => {
               type="email"
               placeholder="Enter your email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
@@ -59,15 +62,21 @@ const Login = () => {
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
-
-          <button className="w-full cursor-pointer py-2 mt-4 rounded-lg bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] font-bold hover:brightness-110 transition">
+          <Link
+            to="/forgot-password"
+            state={{ email }}
+            className="text-[#00FFC6] hover:underline mb-1.5 ml-1 inline-block"
+          >
+            Forget Password?
+          </Link>
+          <button className="w-full cursor-pointer py-2 rounded-lg bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] font-bold hover:brightness-110 transition">
             Login
           </button>
 
           <button
             onClick={handleGoogleSignIn}
             type="button"
-            className="w-full py-2 cursor-pointer mt-2 rounded-lg border border-[#00A3FF] text-[#00A3FF] font-bold hover:bg-[#00A3FF] hover:text-[#111A2B] transition flex items-center justify-center gap-2"
+            className="w-full py-2 cursor-pointer  rounded-lg border border-[#00A3FF] text-[#00A3FF] font-bold hover:bg-[#00A3FF] hover:text-[#111A2B] transition flex items-center justify-center gap-2"
           >
             {/* You can add a Google Icon here */}
             <FcGoogle className="w-6 h-6" /> Continue with Google

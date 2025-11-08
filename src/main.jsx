@@ -13,6 +13,8 @@ import GamesProvider from "./Contexts/GamesProvider";
 import GameDetails from "./Pages/GameDetails";
 import AuthProvider from "./Contexts/AuthProvider";
 import PrivateRoute from "./Routes/PrivateRoute";
+import ForgotPassword from "./Pages/ForgotPassword";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "forgot-password",
+        element: <ForgotPassword></ForgotPassword>,
+      },
     ],
   },
 ]);
@@ -52,7 +58,10 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <GamesProvider>
-        <RouterProvider router={router}></RouterProvider>
+        <>
+          <RouterProvider router={router} />
+          <Toaster position="top-center" reverseOrder={false} />
+        </>
       </GamesProvider>
     </AuthProvider>
   </StrictMode>
