@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   sendPasswordResetEmail,
+  updateProfile,
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { app } from "../Firebase/firebase.config";
@@ -41,6 +42,13 @@ const AuthProvider = ({ children }) => {
   const forgotPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
   };
+  /*Update Profile */
+  const updateProfileInfo = (photoURL, displayName) => {
+    return updateProfile(auth.currentUser, {
+      displayName: displayName,
+      photoURL: photoURL,
+    });
+  };
 
   /*On Auth State Changed */
   useEffect(() => {
@@ -62,6 +70,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     googleSignIn,
     forgotPassword,
+    updateProfileInfo,
   };
 
   return <AuthContext value={userInfo}>{children}</AuthContext>;

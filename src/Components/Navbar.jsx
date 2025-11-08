@@ -111,9 +111,9 @@ const Navbar = () => {
                 </button>
               </li>
               <li>
-                <Link to="/profile">
+                <Link to="/my-profile">
                   <img
-                    src={user.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
+                    src={user.photoURL}
                     alt="Profile"
                     className="w-10 h-10 rounded-full border-2 border-[#00FFC6]"
                   />
@@ -129,9 +129,9 @@ const Navbar = () => {
         <ul className="flex flex-col gap-3 mt-3 text-white lg:hidden bg-[#1E314B] p-4 rounded-md">
           {user && (
             <li className="flex justify-center mb-2">
-              <Link to="/profile" onClick={() => setIsOpen(false)}>
+              <Link to="/my-profile" onClick={() => setIsOpen(false)}>
                 <img
-                  src={user.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
+                  src={user.photoURL}
                   alt="Profile"
                   className="w-16 h-16 rounded-full border-2 border-[#00FFC6]"
                 />

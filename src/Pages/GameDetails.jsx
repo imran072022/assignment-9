@@ -4,6 +4,7 @@ import { GamesContext } from "../Contexts/GamesProvider";
 import starFull from "../assets/star.png";
 import starHalf from "../assets//starHalf.png";
 import starEmpty from "../assets/emptyStar.png";
+import NoDataFound from "./NoDataFound";
 
 const GameDetails = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const GameDetails = () => {
   if (!games || games.length === 0) return <p>No games available.</p>;
 
   const clickedGame = games.find((game) => game.id === id);
-  if (!clickedGame) return <p>Game not found.</p>;
+  if (!clickedGame) return <NoDataFound></NoDataFound>;
 
   const {
     title,

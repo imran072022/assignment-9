@@ -15,6 +15,8 @@ import AuthProvider from "./Contexts/AuthProvider";
 import PrivateRoute from "./Routes/PrivateRoute";
 import ForgotPassword from "./Pages/ForgotPassword";
 import { Toaster } from "react-hot-toast";
+import MyProfile from "./Pages/MyProfile";
+import UpdateProfile from "./Pages/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "forgot-password",
         element: <ForgotPassword></ForgotPassword>,
+      },
+      {
+        path: "my-profile",
+        element: <MyProfile></MyProfile>,
+      },
+      {
+        path: "update-profile",
+        element: <UpdateProfile></UpdateProfile>,
       },
     ],
   },

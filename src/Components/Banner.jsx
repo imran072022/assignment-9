@@ -41,7 +41,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gradient-to-r from-[#002D48] to-[#0086A0]">
+    <div className="w-full">
       <div className="max-w-7xl mx-auto w-full relative overflow-hidden ">
         <img
           src={slides[currentSlide]}
