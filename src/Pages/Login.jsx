@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Contexts/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
+import { motion } from "framer-motion";
 const Login = () => {
   const [email, setEmail] = useState("");
   const { signIn, setUser, googleSignIn } = useContext(AuthContext);
@@ -70,7 +71,7 @@ const Login = () => {
           >
             Forget Password?
           </Link>
-          <button className="w-full cursor-pointer py-2 rounded-lg bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] font-bold hover:brightness-110 transition">
+          <button className="w-full cursor-pointer py-2 rounded-lg font-bold btn-gradient-animate hover:brightness-110 transition-all">
             Login
           </button>
 

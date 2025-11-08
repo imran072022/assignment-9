@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import { Outlet } from "react-router";
 import Footer from "../Components/Footer";
+import ScrollToTop from "../Components/ScrollToTop";
 
 const RootLayout = () => {
   return (
@@ -10,6 +11,7 @@ const RootLayout = () => {
         <nav>
           <Navbar></Navbar>
         </nav>
+        <ScrollToTop></ScrollToTop>
       </header>
       <main className="flex-1">
         <Outlet></Outlet>

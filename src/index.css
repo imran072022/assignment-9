@@ -27,6 +27,8 @@ body {
   background-size: cover;
   min-height: 100vh;
 }
+
+/*Hero Text animation*/
 @keyframes gradient-x {
   0%,
   100% {
@@ -36,7 +38,20 @@ body {
     background-position: 100% 50%;
   }
 }
-.animate-gradient-x {
+.animate-gradient-headers {
   background-size: 200% 200%;
   animation: gradient-x 6s ease infinite;
+}
+
+/* button gradient animation*/
+
+.btn-gradient-animate {
+  background: linear-gradient(270deg, #00a3ff, #00ffc8e7, #00a3ff);
+  background-size: 200% 200%;
+  animation: gradient-x 10s linear infinite;
+}
+
+.animate-gradient-bg {
+  background-size: 200% 200%;
+  animation: gradient-bg 12s ease infinite;
 }

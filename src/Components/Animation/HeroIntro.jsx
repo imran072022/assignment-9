@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 const HeroIntro = () => {
   return (
-    <section className="relative text-center py-16 overflow-hidden">
+    <section className="relative text-center py-16 overflow-hidden max-w-7xl mx-auto">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a1a2f]/50 to-transparent blur-3xl pointer-events-none" />
 
       <motion.h2
-        className="relative text-5xl font-bold orbitron text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-500 to-emerald-400 animate-gradient-x drop-shadow-[0_0_15px_rgba(0,255,255,0.35)]"
+        className="relative text-5xl font-bold orbitron text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-500 to-emerald-400 animate-gradient-headers drop-shadow-[0_0_15px_rgba(0,255,255,0.35)]"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
