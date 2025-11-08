@@ -128,5 +128,155 @@
     "description": "Mobile Legends is a fast-paced MOBA where players form teams and battle in real-time 5v5 matches, featuring heroes with unique skills and strategies.",
     "ratings": "4.3",
     "developer": "Moonton"
+  },
+  {
+    "id": "14",
+    "title": "Samurai II: Vengeance",
+    "coverPhoto": "https://i.ibb.co.com/zHjHfrDy/Samurai-II-Vengeance-logo-1.png",
+    "category": "Action / Hack & Slash",
+    "downloadLink": "https://play.google.com/store/apps/details?id=com.madfingergames.SamuraiIIAll",
+    "description": "Samurai II: Vengeance is a stylised hack‑and‑slash mobile game in which you play as a lone samurai seeking vengeance, battling hordes of enemies, solving puzzles and navigating traps. :contentReference[oaicite:1]{index=1}",
+    "ratings": "4.3",
+    "developer": "Madfinger Games"
+  },
+  {
+    "id": "15",
+    "title": "Viking Rise",
+    "coverPhoto": "https://i.ibb.co.com/gMD68BjG/viking-rise-valhalla-icon.png",
+    "category": "Strategy",
+    "downloadLink": "#",
+    "description": "Viking Rise is a strategy game where you build your village, train warriors, and conquer enemy territories.",
+    "ratings": "4.2",
+    "developer": "IGG"
+  },
+  {
+    "id": "16",
+    "title": "Subway Surfers",
+    "coverPhoto": "https://i.ibb.co.com/qLHsT2M7/subway-sur-1.png",
+    "category": "Endless Runner",
+    "downloadLink": "https://www.kiloo.com/games/subway-surfers",
+    "description": "Subway Surfers is an endless runner where you dodge trains, collect coins, and perform amazing stunts.",
+    "ratings": "4.6",
+    "developer": "Kiloo & SYBO Games"
+  },
+  {
+    "id": "17",
+    "title": "Temple Run 2",
+    "coverPhoto": "https://i.ibb.co.com/8g204qPJ/temple.webp",
+    "category": "Endless Runner",
+    "downloadLink": "https://www.imangistudio.com/templerun2",
+    "description": "Temple Run 2 is an adventure game where you escape from obstacles, collect coins, and survive as long as possible.",
+    "ratings": "4.4",
+    "developer": "Imangi Studios"
+  },
+  {
+    "id": "18",
+    "title": "Castle Clash",
+    "coverPhoto": "https://i.ibb.co.com/S7901wZ1/castle-clash-1.png",
+    "category": "Strategy",
+    "downloadLink": "#",
+    "description": "Castle Clash is a strategy game where you build a base, recruit heroes, and battle in PvP arenas.",
+    "ratings": "4.3",
+    "developer": "IGG"
+  },
+  {
+    "id": "19",
+    "title": "Candy Crush Saga",
+    "coverPhoto": "https://i.ibb.co.com/qM7L54Lt/candy-crush-1.png",
+    "category": "Puzzle",
+    "downloadLink": "https://king.com/game/candycrush",
+    "description": "Candy Crush Saga is a match-3 puzzle game with hundreds of levels and challenging candy combinations.",
+    "ratings": "4.7",
+    "developer": "King"
+  },
+  {
+    "id": "20",
+    "title": "Gunship Battle",
+    "coverPhoto": "https://i.ibb.co.com/Y7JdV4L2/gunship-battle-1.png",
+    "category": "Action",
+    "downloadLink": "#",
+    "description": "Gunship Battle is a helicopter combat game with intense missions, upgrades, and aerial battles.",
+    "ratings": "4.3",
+    "developer": "JOYCITY"
+  },
+  {
+    "id": "21",
+    "title": "Call of Duty",
+    "coverPhoto": "https://i.ibb.co.com/39TrMgKM/cod-1.png",
+    "category": "FPS",
+    "downloadLink": "https://www.callofduty.com/mobile",
+    "description": "Call of Duty Mobile brings console-quality FPS experience to mobile with multiplayer and battle royale modes.",
+    "ratings": "4.5",
+    "developer": "Activision"
+  },
+  {
+    "id": "22",
+    "title": "Whiteout Survival",
+    "coverPhoto": "https://i.ibb.co.com/xK53DsPk/whiteout-survival-2023-09-14-1.webp",
+    "category": "Survival",
+    "downloadLink": "#",
+    "description": "Whiteout Survival is a survival game set in freezing conditions where you gather resources and fight for survival.",
+    "ratings": "4.1",
+    "developer": "Unknown"
+  },
+  {
+    "id": "23",
+    "title": "Angry Birds 2",
+    "coverPhoto": "https://i.ibb.co.com/ZpZzj9H2/angry-birds-2-1.png",
+    "category": "Puzzle",
+    "downloadLink": "https://www.rovio.com/games/angry-birds-2",
+    "description": "Angry Birds 2 is a physics-based puzzle game where you launch birds to destroy structures and defeat pigs.",
+    "ratings": "4.4",
+    "developer": "Rovio Entertainment"
+  },
+  {
+    "id": "24",
+    "title": "Minecraft",
+    "coverPhoto": "https://i.ibb.co.com/x8MLf6dN/minecraft-1.jpg",
+    "category": "Sandbox",
+    "downloadLink": "https://www.minecraft.net/en-us",
+    "description": "Minecraft is a sandbox game where players explore, build, and survive in a blocky 3D world.",
+    "ratings": "4.7",
+    "developer": "Mojang Studios"
+  },
+  {
+    "id": "25",
+    "title": "Hill Climb Racing",
+    "coverPhoto": "https://i.ibb.co.com/KxhZ0RGW/hill-climb-1.png",
+    "category": "Racing",
+    "downloadLink": "#",
+    "description": "Hill Climb Racing is a fun physics-based driving game where you climb hills and perform stunts.",
+    "ratings": "4.3",
+    "developer": "Fingersoft"
+  },
+  {
+    "id": "26",
+    "title": "Asphalt 8",
+    "coverPhoto": "https://i.ibb.co.com/PZDR44cq/asphalt-1.png",
+    "category": "Racing",
+    "downloadLink": "#",
+    "description": "Asphalt 8 is a high-octane racing game with stunning graphics, fast cars, and challenging tracks.",
+    "ratings": "4.5",
+    "developer": "Gameloft"
+  },
+  {
+    "id": "27",
+    "title": "Need for Speed",
+    "coverPhoto": "https://i.ibb.co.com/9kQz0W3W/need4speed-1.jpg",
+    "category": "Racing",
+    "downloadLink": "#",
+    "description": "Need for Speed is a racing game series with street racing, customizable cars, and high-speed pursuits.",
+    "ratings": "4.4",
+    "developer": "Electronic Arts"
+  },
+  {
+    "id": "28",
+    "title": "Ludo King",
+    "coverPhoto": "https://i.ibb.co.com/B2qhzXcm/Ludo-King-Logo.webp",
+    "category": "Board",
+    "downloadLink": "https://www.ludoking.com",
+    "description": "Ludo King is a digital board game bringing the classic Ludo experience to mobile devices.",
+    "ratings": "4.3",
+    "developer": "Gametion"
   }
 ]
