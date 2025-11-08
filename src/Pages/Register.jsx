@@ -4,7 +4,8 @@ import { FcGoogle } from "react-icons/fc";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router";
 const Register = () => {
-  const { signUp, setUser, googleSignIn } = useContext(AuthContext);
+  const { signUp, setUser, googleSignIn, updateProfileInfo, user } =
+    useContext(AuthContext);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -32,12 +33,14 @@ const Register = () => {
       return;
     }
 
-    console.log(name, photo, email, password);
     signUp(email, password)
-      .then((userCredential) => {
-        setUser(userCredential.user);
-        navigate("/");
-        console.log(userCredential.user);
+      .then(() => {
+        updateProfileInfo(photo, name)
+          .then(() => {
+            toast.success("Registration successful!");
+            navigate("/");
+          })
+          .catch((err) => console.log(err));
       })
       .catch((error) => setError(error.message));
   };
@@ -53,6 +56,7 @@ const Register = () => {
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00385a] to-[#00738a]">
+      <title>XPulse | Join the Action</title>
       <div className="w-full max-w-md bg-[#111A2B] rounded-2xl shadow-2xl p-8">
         <h2 className="text-3xl font-bold text-[#00FFC6] text-center mb-6">
           Register
@@ -67,6 +71,7 @@ const Register = () => {
               type="text"
               placeholder="Enter your name"
               name="name"
+              required
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
@@ -79,6 +84,7 @@ const Register = () => {
               type="email"
               placeholder="Enter your email"
               name="email"
+              required
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
@@ -91,6 +97,7 @@ const Register = () => {
               type="text"
               placeholder="Enter your photo URL"
               name="photo"
+              required
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
@@ -102,6 +109,7 @@ const Register = () => {
             <input
               type="password"
               placeholder="Enter your password"
+              required
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />

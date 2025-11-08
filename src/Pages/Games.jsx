@@ -8,6 +8,7 @@ const Games = () => {
   console.log(games);
   return (
     <div className="max-w-7xl mx-auto my-20">
+      <title>XPulse - Discover & Play</title>
       <h2 className="text-white text-5xl text-center  font-bold orbitron">
         Explore Games
       </h2>

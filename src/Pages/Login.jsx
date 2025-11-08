@@ -31,6 +31,7 @@ const Login = () => {
   };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00385a] to-[#00738a]">
+      <title>XPulse | Login Now</title>
       <div className="w-full max-w-md bg-[#111A2B] rounded-2xl shadow-2xl p-8">
         <h2 className="text-3xl font-bold text-[#00FFC6] text-center mb-6">
           Login

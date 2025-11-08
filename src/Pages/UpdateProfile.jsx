@@ -3,18 +3,22 @@ import { AuthContext } from "../Contexts/AuthProvider";
 import toast from "react-hot-toast";
 
 const UpdateProfile = () => {
-  const { updateProfileInfo } = useContext(AuthContext);
+  const { updateProfileInfo, user, setUser } = useContext(AuthContext);
   const handleUpdateProfile = (e) => {
     e.preventDefault();
     const photoURL = e.target.photo.value;
     const displayName = e.target.name.value;
     updateProfileInfo(photoURL, displayName)
-      .then(() => toast.success("Profile updated successfully."))
+      .then(() => {
+        setUser({ ...user, photoURL, displayName });
+        toast.success("Profile updated successfully.");
+      })
       .catch((error) => console.log(error));
   };
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gradient-to-br from-[#002d48] via-[#00485e] to-[#00738a]">
+      <title>Update Profile</title>
       <div className="bg-[#19273A]/80 p-8 rounded-2xl shadow-lg w-full max-w-md text-white flex flex-col gap-4">
         <h2 className="text-2xl font-bold text-center mb-4">Update Profile</h2>
 

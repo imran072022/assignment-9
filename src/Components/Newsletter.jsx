@@ -27,8 +27,8 @@ const Newsletter = () => {
       </div>
 
       <div className="relative max-w-xl mx-auto text-center space-y-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white">
-          Join the Gamehub Insider
+        <h2 className="text-white text-4xl text-center font-bold orbitron">
+          Join the XPulse Insider
         </h2>
         <p className="text-gray-300">
           Get indie game updates, developer stories & early-access perks

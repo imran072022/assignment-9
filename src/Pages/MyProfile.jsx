@@ -7,6 +7,7 @@ const MyProfile = () => {
   console.log(user);
   return (
     <div className="min-h-screen flex justify-center items-center ">
+      <title>My Profile</title>
       <div className="bg-[#19273A]/80 p-8 rounded-2xl shadow-lg w-full max-w-md text-white flex flex-col items-center gap-4">
         <img
           src={user.photoURL || "/default-avatar.png"}

@@ -7,6 +7,7 @@ import error404 from "../assets/lotties/Error404.json";
 const Page404 = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00485e] to-[#00738a] px-4">
+      <title>Page Not Found</title>
       {/* Center glow container */}
       <motion.div
         className="w-full max-w-lg p-8 flex flex-col items-center text-center rounded-2xl

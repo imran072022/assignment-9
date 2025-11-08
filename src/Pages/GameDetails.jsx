@@ -38,6 +38,7 @@ const GameDetails = () => {
 
   return (
     <div className="relative min-h-screen text-white overflow-hidden">
+      <title>{title}</title>
       {/* Blurred background hero */}
       <div
         className="absolute inset-0 bg-cover bg-center blur-3xl opacity-30"
