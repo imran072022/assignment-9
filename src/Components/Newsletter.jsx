@@ -1,41 +1,82 @@
 import React from "react";
+import { motion } from "framer-motion";
 import love from "../assets/love.png";
 import sword from "../assets/sword.png";
 import treasure from "../assets/treasure.png";
 import diamond from "../assets/diamond.png";
+
 const Newsletter = () => {
   return (
     <section className="relative py-20 px-4 text-gray-100 bg-[#111a2b] overflow-hidden">
       {/* Floating pixel/game icons */}
-      <div className="absolute inset-0 pointer-events-none">
-        <img
+      <motion.div className="absolute inset-0 pointer-events-none">
+        <motion.img
           src={love}
-          className="absolute top-10 left-10 w-6 animate-bounce-slow opacity-20"
+          className="absolute top-10 left-10 w-6 opacity-20"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
         />
-        <img
+        <motion.img
           src={treasure}
-          className="absolute top-32 right-16 w-8 animate-bounce-slow opacity-15"
+          className="absolute top-32 right-16 w-8 opacity-15"
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 6,
+            ease: "easeInOut",
+            delay: 1,
+          }}
         />
-        <img
+        <motion.img
           src={sword}
-          className="absolute bottom-20 left-20 w-5 animate-bounce-slow opacity-10"
+          className="absolute bottom-20 left-20 w-5 opacity-10"
+          animate={{ y: [0, -6, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 6,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
         />
-        <img
+        <motion.img
           src={diamond}
-          className="absolute bottom-10 right-32 w-7 animate-bounce-slow opacity-20"
+          className="absolute bottom-10 right-32 w-7 opacity-20"
+          animate={{ y: [0, -8, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 6,
+            ease: "easeInOut",
+            delay: 0.3,
+          }}
         />
-      </div>
+      </motion.div>
 
       <div className="relative max-w-xl mx-auto text-center space-y-8">
-        <h2 className="text-white text-4xl text-center font-bold orbitron">
+        <motion.h2
+          className="text-white text-4xl font-bold orbitron"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           Join the XPulse Insider
-        </h2>
-        <p className="text-gray-300">
+        </motion.h2>
+
+        <motion.p
+          className="text-gray-300"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           Get indie game updates, developer stories & early-access perks
           delivered straight to your inbox.
-        </p>
+        </motion.p>
 
-        <form className="flex flex-col sm:flex-row items-center gap-4">
+        <motion.form
+          className="flex flex-col sm:flex-row items-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
           <input
             type="email"
             placeholder="Your email address"
@@ -48,44 +89,21 @@ const Newsletter = () => {
                        bg-gradient-to-r from-[#00A3FF] to-[#00FFC6]
                        hover:from-[#00FFC6] hover:to-[#00A3FF]
                        hover:shadow-lg hover:shadow-cyan-500/70
-                       animate-gradient-x transition-all duration-500"
+                       transition-all duration-500"
           >
             Subscribe
           </button>
-        </form>
+        </motion.form>
 
-        <p className="text-sm text-gray-400">No spam. Unsubscribe anytime.</p>
+        <motion.p
+          className="text-sm text-gray-400"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
+          No spam. Unsubscribe anytime.
+        </motion.p>
       </div>
-
-      {/* Floating animation keyframes */}
-      <style jsx>{`
-        @keyframes bounce-slow {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-8px);
-          }
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 6s infinite ease-in-out;
-        }
-
-        @keyframes gradient-x {
-          0%,
-          100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-        .animate-gradient-x {
-          background-size: 200% 200%;
-          animation: gradient-x 4s infinite linear;
-        }
-      `}</style>
     </section>
   );
 };

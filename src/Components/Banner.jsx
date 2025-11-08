@@ -5,6 +5,7 @@ import modernWarship from "../assets/modernWarship.jpg";
 import lm from "../assets/lm.jpg";
 import pubg from "../assets/pubg.webp";
 import mlbb from "../assets/mlbb.jpg";
+import HeroIntro from "./Animation/HeroIntro";
 
 const slides = [coc, ff, modernWarship, lm, pubg, mlbb];
 
@@ -43,6 +44,7 @@ const Banner = () => {
   return (
     <div className="w-full">
       <div className="max-w-7xl mx-auto w-full relative overflow-hidden ">
+        <HeroIntro></HeroIntro>
         <img
           src={slides[currentSlide]}
           alt={`Slide ${currentSlide + 1}`}
