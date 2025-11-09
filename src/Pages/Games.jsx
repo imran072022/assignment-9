@@ -12,17 +12,17 @@ const Games = () => {
       <motion.h2
         animate={{ opacity: [0.8, 1, 0.8] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className=" text-5xl text-center  font-extrabold orbitron text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300 "
+        className=" text-4xl sm:text-5xl text-center  font-extrabold orbitron text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300 "
       >
         Explore Games
       </motion.h2>
-      <p className="text-white text-xl text-center mb-10 mt-2">
+      <p className="text-white text-lg sm:text-xl text-center mb-10 mt-2">
         Discover and play your favorite games from all genres.
       </p>
       {loading ? (
         <Loading></Loading>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 px-3">
           {games.map((game) => (
             <GameCard key={game.id} game={game}></GameCard>
           ))}

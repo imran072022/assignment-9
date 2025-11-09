@@ -47,7 +47,6 @@ const GameDetails = () => {
 
       {/* Main content */}
       <div className="relative max-w-6xl mx-auto px-4 py-12">
-        {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
           className="mb-6 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-sm text-gray-200 transition"
@@ -68,7 +67,7 @@ const GameDetails = () => {
 
           {/* Game Info */}
           <div className="flex-1 space-y-4">
-            <h2 className="text-3xl font-bold">{title}</h2>
+            <h2 className="text-3xl font-semibold md:font-bold">{title}</h2>
             <p className="text-sm text-gray-400">Developed by {developer}</p>
 
             {/* Category + Rating */}
@@ -121,7 +120,9 @@ const GameDetails = () => {
         {/* Related Games */}
         {relatedGames.length > 0 && (
           <div className="mt-12">
-            <h3 className="text-xl font-semibold mb-4">More like this</h3>
+            <h3 className="text-xl font-medium sm:font-semibold mb-4">
+              More like this
+            </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
               {relatedGames.map((game) => (
                 <div
@@ -135,7 +136,7 @@ const GameDetails = () => {
                     className="w-full h-40 object-cover"
                   />
                   <div className="p-3">
-                    <h4 className="text-sm font-semibold line-clamp-2">
+                    <h4 className="text-sm font-medium sm:font-semibold line-clamp-2">
                       {game.title}
                     </h4>
                     <p className="text-xs text-gray-400 mt-1">

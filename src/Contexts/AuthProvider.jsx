@@ -25,7 +25,6 @@ const AuthProvider = ({ children }) => {
 
   /*Sign In */
   const signIn = (email, password) => {
-    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -45,15 +44,12 @@ const AuthProvider = ({ children }) => {
   };
   /*Update Profile */
   const updateProfileInfo = (photoURL, displayName) => {
-    setLoading(true);
     return updateProfile(auth.currentUser, {
       displayName: displayName,
       photoURL: photoURL,
-    })
-      .then(() => {
-        setUser({ ...auth.currentUser, displayName, photoURL });
-      })
-      .finally(() => setLoading(false));
+    }).then(() => {
+      setUser({ ...auth.currentUser, displayName, photoURL });
+    });
   };
 
   /*On Auth State Changed */

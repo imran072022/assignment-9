@@ -1,34 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../Contexts/AuthProvider";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
-import Lottie from "lottie-react";
-import loader from "../assets/lotties/rocketLaunch.json";
 
 const UpdateProfile = () => {
-  const { updateProfileInfo, user, setUser, loading } = useContext(AuthContext);
+  const { updateProfileInfo, user, setUser } = useContext(AuthContext);
+  const [updating, setUpdating] = useState(false);
   const navigate = useNavigate();
 
   const handleUpdateProfile = (e) => {
     e.preventDefault();
     const photoURL = e.target.photo.value;
     const displayName = e.target.name.value;
-
+    setUpdating(true);
     updateProfileInfo(photoURL, displayName)
       .then(() => {
         setUser({ ...user, photoURL, displayName });
+        setUpdating(false);
         toast.success("Profile updated successfully.");
       })
       .catch((error) => console.log(error));
   };
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen bg-[#111A2B]">
-        <Lottie animationData={loader} loop style={{ width: 200 }} />
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-gradient-to-br from-[#002d48] via-[#00485e] to-[#00738a]">
@@ -60,9 +52,10 @@ const UpdateProfile = () => {
           />
           <button
             type="submit"
+            disabled={updating}
             className="mt-4 cursor-pointer bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] text-black font-semibold py-2 rounded-lg hover:opacity-90 transition"
           >
-            Update Information
+            {updating ? "Updating..." : "Update Information"}
           </button>
         </form>
       </div>

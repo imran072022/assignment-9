@@ -3,27 +3,34 @@ import { AuthContext } from "../Contexts/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { motion } from "framer-motion";
-import Loading from "../Components/Loading";
+import toast from "react-hot-toast";
+
 const Login = () => {
+  const { signIn, setUser, googleSignIn } = useContext(AuthContext);
   const [email, setEmail] = useState("");
-  const { signIn, setUser, googleSignIn, loading } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [loggingIn, setLoggingIn] = useState(false);
   const location = useLocation();
   const redirectFrom = location.state?.from;
   const message = location.state?.message;
   const navigate = useNavigate();
-  if (loading) return <Loading></Loading>;
   const handleLogin = (e) => {
     e.preventDefault();
+    setError("");
     const email = e.target.email.value;
     const password = e.target.password.value;
     /*Email/Pass sign in */
+    setLoggingIn(true);
     signIn(email, password)
       .then((userCredential) => {
         setUser(userCredential.user);
-        navigate(`${location.state ? location.state : "/"}`);
-        console.log(userCredential.user);
+        navigate(redirectFrom || "/");
+        toast.success("Logged in successfully!");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setError(error.message);
+        setLoggingIn(false);
+      });
   };
   /*Google sign in */
   const handleGoogleSignIn = () => {
@@ -33,10 +40,13 @@ const Login = () => {
         navigate("/");
         console.log(userCredential.user);
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => {
+        console.log(error.message);
+        setError(error.message);
+      });
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00385a] to-[#00738a]">
+    <div className=" my-24 md:min-h-screen md:my-0 flex items-center justify-center">
       <title>XPulse | Login Now</title>
 
       <div className="w-full max-w-md bg-[#111A2B] rounded-2xl shadow-2xl p-8">
@@ -79,6 +89,9 @@ const Login = () => {
               className="w-full px-4 py-2 mt-2 rounded-lg bg-[#19273A] text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF]"
             />
           </div>
+
+          {error && <p className="text-red-400 my-0 text-sm">{error}</p>}
+
           <Link
             to="/forgot-password"
             state={{ email }}
@@ -87,7 +100,7 @@ const Login = () => {
             Forget Password?
           </Link>
           <button className="w-full cursor-pointer py-2 rounded-lg font-bold btn-gradient-animate hover:brightness-110 transition-all">
-            Login
+            {loggingIn ? "Logging in..." : "Login"}
           </button>
 
           <button

@@ -40,9 +40,9 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="relative max-w-7xl mx-auto my-12 ">
+    <div className="relative max-w-7xl mx-auto  sm:my-12 ">
       {/* Animated Gradient Background */}
-      <div className="absolute inset-0 -z-10 rounded-[40px] animate-gradient-bg bg-gradient-to-r from-cyan-600 via-blue-800 to-emerald-700 opacity-80"></div>
+      <div className="absolute inset-0 -z-10 rounded-[40px] animate-gradient-bg bg-gradient-to-r from-cyan-600 via-blue-800 to-emerald-700 opacity-70"></div>
 
       <div className="relative flex items-center justify-center py-6">
         {/* Slider Frame */}

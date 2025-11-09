@@ -1,16 +1,62 @@
-# React + Vite
+# XPulse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Overview
 
-## React Compiler
+**XPulse** is a modern, single-page gaming website that provides users with an immersive and interactive experience. Featuring dynamic banners, neon-themed UI, and smooth animations, the site is designed to engage users with a vibrant gaming environment.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Interactive Banner/Slider:** Neon-glowing slides showcasing popular games.
+- **Responsive Design:** Fully responsive on mobile, tablet, and desktop devices.
+- **User Engagement:** Smooth animations using **Framer Motion** and **Lottie**.
+- **Authentication:** Firebase-powered login and registration with secure environment variable handling.
+- **Notifications:** Toast notifications using `react-toastify`.
+- **Unique Design:** Urban-themed neon interface to match the gaming aesthetic.
+- **Environment Security:** Firebase keys secured in `.env.local`.
+- **SPA Compliance:** Single-page application with error-free routing and reload handling.
+
+---
+
+## Technologies Used
+
+- **Frontend:** React.js
+- **Routing:** React Router
+- **Styling:** Tailwind CSS, DaisyUI
+- **Animations:** Framer Motion, Lottie
+- **Notifications:** React Toastify, React Hot Toast
+- **Icons:** React Icons
+- **JavaScript:** ES6+
+- **Hosting & Deployment:** Netlify
+- **Environment Variables:** `.env.local` for Firebase configuration
+
+---
+
+## Demo
+
+**Live URL:** https://x-pulse.netlify.app/
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js installed
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/XPulse.git
+   ```

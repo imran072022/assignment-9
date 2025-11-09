@@ -1,22 +1,16 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Contexts/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
-import { toast, ToastContainer } from "react-toastify";
+import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
-import Loading from "../Components/Loading";
+import { ToastContainer } from "react-toastify";
 const Register = () => {
-  const {
-    signUp,
-    setUser,
-    googleSignIn,
-    updateProfileInfo,
-    loading,
-    setLoading,
-  } = useContext(AuthContext);
+  const { signUp, setUser, googleSignIn, updateProfileInfo } =
+    useContext(AuthContext);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [signingUp, setSigningUp] = useState(false);
   const navigate = useNavigate();
-  if (loading) return <Loading></Loading>;
   /* Password Validation */
   /*Keep password rules in an object */
   const passwordRules = {
@@ -32,30 +26,28 @@ const Register = () => {
   const handleRegister = (e) => {
     setError("");
     e.preventDefault();
-    setLoading(true);
     const name = e.target.name.value;
     const photo = e.target.photo.value;
     const email = e.target.email.value;
 
     if (!allValid) {
       toast.error("Password doesn't meet all requirements");
-      setLoading(false);
       return;
     }
-
+    setSigningUp(true);
     signUp(email, password)
       .then(() => {
         updateProfileInfo(photo, name)
           .then(() => {
-            toast.success("Registration successful!");
+            setSigningUp(false);
             navigate("/");
+            toast.success("Successfully registered!");
           })
-          .catch((err) => console.log(err))
-          .finally(() => setLoading(false));
+          .catch((err) => setError(err.message));
       })
       .catch((error) => {
         setError(error.message);
-        setLoading(false);
+        setSigningUp(false);
       });
   };
 
@@ -69,7 +61,7 @@ const Register = () => {
       .catch((error) => console.log(error.message));
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00385a] to-[#00738a]">
+    <div className="min-h-screen flex items-center justify-center">
       <title>XPulse | Join the Action</title>
       <div className="w-full max-w-md bg-[#111A2B] rounded-2xl shadow-2xl p-8">
         <h2 className="text-3xl font-bold text-[#00FFC6] text-center mb-6">
@@ -176,14 +168,14 @@ const Register = () => {
             {error && <p className="text-sm text-red-400 mt-1">{error}</p>}
           </div>
 
-          <button className="w-full cursor-pointer py-2 mt-4 rounded-lg bg-gradient-to-r from-[#00A3FF] to-[#00FFC6]  font-bold hover:brightness-110 transition">
-            Register
+          <button className="w-full cursor-pointer py-2 mt-2 rounded-lg bg-gradient-to-r from-[#00A3FF] to-[#00FFC6]  font-bold hover:brightness-110 transition">
+            {signingUp ? "Signing up..." : "Sign up"}
           </button>
 
           <button
             onClick={handleGoogleSignIn}
             type="button"
-            className="w-full cursor-pointer py-2 mt-2 rounded-lg border border-[#00A3FF] text-[#00A3FF] font-bold hover:bg-[#00A3FF] hover:text-[#111A2B] transition flex items-center justify-center gap-2"
+            className="w-full cursor-pointer py-2 rounded-lg border border-[#00A3FF] text-[#00A3FF] font-bold hover:bg-[#00A3FF] hover:text-[#111A2B] transition flex items-center justify-center gap-2"
           >
             <FcGoogle className="w-6 h-6" /> Continue with Google
           </button>

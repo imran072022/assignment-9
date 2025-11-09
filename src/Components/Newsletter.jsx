@@ -7,7 +7,7 @@ import diamond from "../assets/diamond.png";
 
 const Newsletter = () => {
   return (
-    <section className="relative py-20 px-4 text-gray-100 bg-[#111a2b] overflow-hidden">
+    <section className="relative py-16 sm:py-20 px-4 text-gray-100 bg-[#111a2b] overflow-hidden">
       {/* Floating pixel/game icons */}
       <motion.div className="absolute inset-0 pointer-events-none">
         <motion.img
@@ -51,9 +51,9 @@ const Newsletter = () => {
         />
       </motion.div>
 
-      <div className="relative max-w-xl mx-auto text-center space-y-8">
+      <div className="relative max-w-xl mx-auto text-center space-y-6 sm:space-y-8">
         <motion.h2
-          className="text-white text-4xl font-bold orbitron"
+          className="text-white text-2xl sm:text-4xl font-bold orbitron"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -81,11 +81,11 @@ const Newsletter = () => {
             type="email"
             placeholder="Your email address"
             required
-            className="input input-bordered w-full sm:flex-1 bg-gray-800/60 border-gray-700 text-gray-100 placeholder-gray-400 backdrop-blur-sm focus:ring-2 focus:ring-cyan-400 transition-all duration-300"
+            className="input h-11 sm:h-12 input-bordered w-full sm:flex-1 bg-gray-800/60 border-gray-700 text-gray-100 placeholder-gray-400 backdrop-blur-sm focus:ring-2 focus:ring-cyan-400 transition-all duration-300"
           />
           <button
             type="submit"
-            className="w-full sm:w-auto px-6 py-3 font-semibold rounded-md text-white
+            className="w-full  cursor-pointer sm:w-auto px-6 py-2.5 sm:py-3 font-semibold rounded-md text-white
                        bg-gradient-to-r from-[#00A3FF] to-[#00FFC6]
                        hover:from-[#00FFC6] hover:to-[#00A3FF]
                        hover:shadow-lg hover:shadow-cyan-500/70
