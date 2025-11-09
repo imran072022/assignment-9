@@ -1,16 +1,18 @@
 import React, { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
-import { AuthContext } from "../Contexts/AuthProvider"; // adjust path if needed
-import toast from "react-hot-toast"; // optional but great for feedback
+import { AuthContext } from "../Contexts/AuthProvider";
+import toast from "react-hot-toast";
 
 const ForgotPassword = () => {
   const location = useLocation();
   const [email, setEmail] = useState(location.state?.email || "");
+  const [sending, setSending] = useState(false);
   const navigate = useNavigate();
   const { forgotPassword } = useContext(AuthContext);
 
   const handleReset = (e) => {
     e.preventDefault();
+    setSending(true);
     const email = e.target.email.value;
     forgotPassword(email)
       .then(() => {
@@ -19,7 +21,8 @@ const ForgotPassword = () => {
           window.open("https://mail.google.com/", "_blank");
         }, 2000);
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => console.log(error.message))
+      .finally(() => setSending(false));
   };
 
   return (
@@ -42,9 +45,10 @@ const ForgotPassword = () => {
 
           <button
             type="submit"
+            disabled={sending}
             className="mt-4 cursor-pointer bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] text-black font-semibold py-2 rounded-lg hover:opacity-90 transition"
           >
-            Reset Password
+            {sending ? "Sending..." : "Reset Password"}
           </button>
         </form>
 

@@ -2,13 +2,21 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Contexts/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { toast, ToastContainer } from "react-toastify";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
+import Loading from "../Components/Loading";
 const Register = () => {
-  const { signUp, setUser, googleSignIn, updateProfileInfo, user } =
-    useContext(AuthContext);
+  const {
+    signUp,
+    setUser,
+    googleSignIn,
+    updateProfileInfo,
+    loading,
+    setLoading,
+  } = useContext(AuthContext);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  if (loading) return <Loading></Loading>;
   /* Password Validation */
   /*Keep password rules in an object */
   const passwordRules = {
@@ -24,12 +32,14 @@ const Register = () => {
   const handleRegister = (e) => {
     setError("");
     e.preventDefault();
+    setLoading(true);
     const name = e.target.name.value;
     const photo = e.target.photo.value;
     const email = e.target.email.value;
 
     if (!allValid) {
       toast.error("Password doesn't meet all requirements");
+      setLoading(false);
       return;
     }
 
@@ -40,9 +50,13 @@ const Register = () => {
             toast.success("Registration successful!");
             navigate("/");
           })
-          .catch((err) => console.log(err));
+          .catch((err) => console.log(err))
+          .finally(() => setLoading(false));
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
   };
 
   const handleGoogleSignIn = () => {
@@ -177,9 +191,9 @@ const Register = () => {
 
         <p className="mt-4 text-center text-gray-400">
           Already have an account?
-          <a href="/login" className="text-[#00FFC6] hover:underline ml-1">
+          <Link to="/login" className="text-[#00FFC6] hover:underline ml-1">
             Login
-          </a>
+          </Link>
         </p>
       </div>
       <ToastContainer />

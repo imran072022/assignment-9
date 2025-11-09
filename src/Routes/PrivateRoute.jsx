@@ -8,7 +8,15 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
   if (loading) return <Loading></Loading>;
   if (user) return children;
-  return <Navigate state={location.pathname} to="/login"></Navigate>;
+  return (
+    <Navigate
+      state={{
+        from: location.pathname,
+        message: "You need to login first to access this page",
+      }}
+      to="/login"
+    ></Navigate>
+  );
 };
 
 export default PrivateRoute;

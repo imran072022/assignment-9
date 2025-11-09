@@ -31,7 +31,10 @@ const PopularGames = () => {
 
       <div className="my-8 text-center">
         {" "}
-        <Link className="inline-block bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] px-6 py-3 rounded-md text-white font-medium hover:scale-105 transition-transform">
+        <Link
+          to="/games"
+          className="inline-block bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] px-6 py-3 rounded-md text-white font-medium hover:scale-105 transition-transform"
+        >
           Explore More
         </Link>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -45,24 +46,29 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
             <li>
-              <a href="/" className="hover:text-cyan-400 transition">
+              <Link to="/" className="hover:text-cyan-400 transition">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/games" className="hover:text-cyan-400 transition">
+              <Link to="/games" className="hover:text-cyan-400 transition">
                 Games
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/my-profile" className="hover:text-cyan-400 transition">
+              <Link to="/my-profile" className="hover:text-cyan-400 transition">
                 My Profile
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/login" className="hover:text-cyan-400 transition">
-                Login/Register
-              </a>
+              <Link to="/login" className="hover:text-cyan-400 transition">
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link to="/register" className="hover:text-cyan-400 transition">
+                Register
+              </Link>
             </li>
           </ul>
         </div>
@@ -72,24 +78,24 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4">Resources</h3>
           <ul className="space-y-2">
             <li>
-              <a href="/about" className="hover:text-cyan-400 transition">
+              <Link to="/about" className="hover:text-cyan-400 transition">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/faq" className="hover:text-cyan-400 transition">
+              <Link to="/faq" className="hover:text-cyan-400 transition">
                 FAQ
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/terms" className="hover:text-cyan-400 transition">
+              <Link to="/terms" className="hover:text-cyan-400 transition">
                 Terms & Conditions
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/privacy" className="hover:text-cyan-400 transition">
+              <Link to="/privacy" className="hover:text-cyan-400 transition">
                 Privacy Policy
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -98,18 +104,18 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Connect</h3>
           <div className="flex space-x-4 mb-4 text-2xl">
-            <a href="#" className="hover:text-cyan-400 transition">
+            <Link to="#" className="hover:text-cyan-400 transition">
               🐦
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition">
+            </Link>
+            <Link to="#" className="hover:text-cyan-400 transition">
               📘
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition">
+            </Link>
+            <Link to="#" className="hover:text-cyan-400 transition">
               🎮
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition">
+            </Link>
+            <Link to="#" className="hover:text-cyan-400 transition">
               💬
-            </a>
+            </Link>
           </div>
           <p className="text-gray-400 text-sm">
             Join 50k+ gamers — stay updated with news and tournaments!

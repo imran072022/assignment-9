@@ -5,7 +5,7 @@ import GameCard from "../Components/GameCard";
 import { motion } from "framer-motion";
 const Games = () => {
   const { games, loading } = useContext(GamesContext);
-  console.log(games);
+
   return (
     <div className="max-w-7xl mx-auto my-20">
       <title>XPulse - Discover & Play</title>

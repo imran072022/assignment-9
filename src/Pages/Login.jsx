@@ -3,16 +3,20 @@ import { AuthContext } from "../Contexts/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router";
 import { FcGoogle } from "react-icons/fc";
 import { motion } from "framer-motion";
+import Loading from "../Components/Loading";
 const Login = () => {
   const [email, setEmail] = useState("");
-  const { signIn, setUser, googleSignIn } = useContext(AuthContext);
+  const { signIn, setUser, googleSignIn, loading } = useContext(AuthContext);
   const location = useLocation();
+  const redirectFrom = location.state?.from;
+  const message = location.state?.message;
   const navigate = useNavigate();
+  if (loading) return <Loading></Loading>;
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-
+    /*Email/Pass sign in */
     signIn(email, password)
       .then((userCredential) => {
         setUser(userCredential.user);
@@ -21,6 +25,7 @@ const Login = () => {
       })
       .catch((error) => console.log(error));
   };
+  /*Google sign in */
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((userCredential) => {
@@ -33,7 +38,17 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00385a] to-[#00738a]">
       <title>XPulse | Login Now</title>
+
       <div className="w-full max-w-md bg-[#111A2B] rounded-2xl shadow-2xl p-8">
+        {message && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-4 p-2 bg-yellow-400 text-black rounded-md text-center font-semibold"
+          >
+            {message}
+          </motion.div>
+        )}
         <h2 className="text-3xl font-bold text-[#00FFC6] text-center mb-6">
           Login
         </h2>
@@ -87,9 +102,9 @@ const Login = () => {
 
         <p className="mt-4 text-center text-gray-400">
           Don't have an account?
-          <a href="/register" className="text-[#00FFC6] hover:underline ml-1">
+          <Link to="/register" className="text-[#00FFC6] hover:underline ml-1">
             Register
-          </a>
+          </Link>
         </p>
       </div>
     </div>
