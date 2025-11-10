@@ -194,7 +194,7 @@
     "title": "Gunship Battle",
     "coverPhoto": "https://i.ibb.co.com/Y7JdV4L2/gunship-battle-1.png",
     "category": "Action",
-    "downloadLink": "#",
+    "downloadLink": "https://gw.joycity.com/en",
     "description": "Gunship Battle is a helicopter combat game with intense missions, upgrades, and aerial battles.",
     "ratings": "4.3",
     "developer": "JOYCITY"
@@ -214,10 +214,10 @@
     "title": "Whiteout Survival",
     "coverPhoto": "https://i.ibb.co.com/xK53DsPk/whiteout-survival-2023-09-14-1.webp",
     "category": "Survival",
-    "downloadLink": "#",
+    "downloadLink": "https://whiteoutsurvival.centurygames.com/",
     "description": "Whiteout Survival is a survival game set in freezing conditions where you gather resources and fight for survival.",
     "ratings": "4.1",
-    "developer": "Unknown"
+    "developer": "Century Games Pte. Ltd"
   },
   {
     "id": "23",
@@ -244,7 +244,7 @@
     "title": "Hill Climb Racing",
     "coverPhoto": "https://i.ibb.co.com/KxhZ0RGW/hill-climb-1.png",
     "category": "Racing",
-    "downloadLink": "#",
+    "downloadLink": "https://play.google.com/store/apps/details?id=com.fingersoft.hillclimb&hl=en",
     "description": "Hill Climb Racing is a fun physics-based driving game where you climb hills and perform stunts.",
     "ratings": "4.3",
     "developer": "Fingersoft"
@@ -254,7 +254,7 @@
     "title": "Asphalt 8",
     "coverPhoto": "https://i.ibb.co.com/PZDR44cq/asphalt-1.png",
     "category": "Racing",
-    "downloadLink": "#",
+    "downloadLink": "https://www.gameloft.com/game/asphalt-8",
     "description": "Asphalt 8 is a high-octane racing game with stunning graphics, fast cars, and challenging tracks.",
     "ratings": "4.5",
     "developer": "Gameloft"
@@ -264,7 +264,7 @@
     "title": "Need for Speed",
     "coverPhoto": "https://i.ibb.co.com/9kQz0W3W/need4speed-1.jpg",
     "category": "Racing",
-    "downloadLink": "#",
+    "downloadLink": "https://play.google.com/store/apps/details?id=com.ea.game.nfs14_row&hl=en",
     "description": "Need for Speed is a racing game series with street racing, customizable cars, and high-speed pursuits.",
     "ratings": "4.4",
     "developer": "Electronic Arts"
