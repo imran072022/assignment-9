@@ -21,7 +21,7 @@ const ForgotPassword = () => {
           window.open("https://mail.google.com/", "_blank");
         }, 2000);
       })
-      .catch((error) => console.log(error.message))
+      .catch(() => {})
       .finally(() => setSending(false));
   };
 

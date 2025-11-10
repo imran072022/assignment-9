@@ -7,7 +7,7 @@ const MyProfile = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gradient-to-br from-[#002d48] via-[#00485e] to-[#00738a]">
+    <div className=" my-24 flex justify-center items-center px-2.5">
       <title>My Profile</title>
 
       <div className="relative bg-[#19273A]/80 p-8 rounded-2xl shadow-lg w-full max-w-md text-white flex flex-col items-center gap-4">

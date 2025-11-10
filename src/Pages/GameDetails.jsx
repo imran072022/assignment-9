@@ -9,10 +9,8 @@ import NoDataFound from "./NoDataFound";
 const GameDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { games, loading } = useContext(GamesContext);
+  const { games } = useContext(GamesContext);
 
-  if (loading)
-    return <p className="text-center text-white mt-10">Loading...</p>;
   if (!games || games.length === 0) return <p>No games available.</p>;
 
   const clickedGame = games.find((game) => game.id === id);
@@ -46,12 +44,12 @@ const GameDetails = () => {
       ></div>
 
       {/* Main content */}
-      <div className="relative max-w-6xl mx-auto px-4 py-12">
+      <div className="relative max-w-6xl mx-auto px-3 py-12">
         <button
           onClick={() => navigate(-1)}
           className="mb-6 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-sm text-gray-200 transition"
         >
-          ← Back
+          ← Back to Home
         </button>
 
         {/* Game Header */}

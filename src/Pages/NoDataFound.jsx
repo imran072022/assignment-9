@@ -6,7 +6,7 @@ import noDataFound from "../assets/lotties/noData.json"; // your Lottie file
 
 const NoDataFound = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002d48] via-[#00485e] to-[#00738a] px-4">
+    <div className="md:min-h-screen my-20 flex items-center justify-center px-3">
       {/* Center container with glow/focus */}
       <motion.div
         className="w-full max-w-md p-8 flex flex-col items-center text-center rounded-2xl

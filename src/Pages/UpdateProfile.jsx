@@ -19,11 +19,11 @@ const UpdateProfile = () => {
         setUpdating(false);
         toast.success("Profile updated successfully.");
       })
-      .catch((error) => console.log(error));
+      .catch(() => {});
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gradient-to-br from-[#002d48] via-[#00485e] to-[#00738a]">
+    <div className="px-2.5 my-24 flex justify-center items-center ">
       <title>Update Profile</title>
       <div className="relative bg-[#19273A]/80 p-8 rounded-2xl shadow-lg w-full max-w-md text-white flex flex-col gap-4">
         <button

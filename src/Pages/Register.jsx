@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Contexts/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import toast from "react-hot-toast";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { ToastContainer } from "react-toastify";
 const Register = () => {
   const { signUp, setUser, googleSignIn, updateProfileInfo } =
@@ -11,6 +11,8 @@ const Register = () => {
   const [error, setError] = useState("");
   const [signingUp, setSigningUp] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectFrom = location.state?.from || "/";
   /* Password Validation */
   /*Keep password rules in an object */
   const passwordRules = {
@@ -40,13 +42,18 @@ const Register = () => {
         updateProfileInfo(photo, name)
           .then(() => {
             setSigningUp(false);
-            navigate("/");
+            navigate(redirectFrom);
             toast.success("Successfully registered!");
           })
-          .catch((err) => setError(err.message));
+          .catch((err) => {
+            setError(err.message);
+          });
       })
       .catch((error) => {
-        setError(error.message);
+        const msg = error.message.includes("auth/email-already-in-use")
+          ? "Email is already registered."
+          : "Something went wrong. Please try again.";
+        setError(msg);
         setSigningUp(false);
       });
   };
@@ -55,10 +62,9 @@ const Register = () => {
     googleSignIn()
       .then((userCredential) => {
         setUser(userCredential.user);
-        navigate("/");
-        console.log(userCredential.user);
+        navigate(redirectFrom);
       })
-      .catch((error) => console.log(error.message));
+      .catch(() => {});
   };
   return (
     <div className="min-h-screen flex items-center justify-center">

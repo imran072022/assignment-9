@@ -24,11 +24,15 @@ const Login = () => {
     signIn(email, password)
       .then((userCredential) => {
         setUser(userCredential.user);
-        navigate(redirectFrom || "/");
+        navigate(redirectFrom || "/", { replace: true });
+
         toast.success("Logged in successfully!");
       })
       .catch((error) => {
-        setError(error.message);
+        const msg = error.message.includes("auth/invalid-credential")
+          ? "Email or password is incorrect."
+          : "Something went wrong. Please try again.";
+        setError(msg);
         setLoggingIn(false);
       });
   };
@@ -37,12 +41,13 @@ const Login = () => {
     googleSignIn()
       .then((userCredential) => {
         setUser(userCredential.user);
-        navigate("/");
-        console.log(userCredential.user);
+        navigate(redirectFrom || "/", { replace: true });
       })
       .catch((error) => {
-        console.log(error.message);
-        setError(error.message);
+        const msg = error.message.includes("auth/invalid-credential")
+          ? "Email or password is incorrect."
+          : "Something went wrong. Please try again.";
+        setError(msg);
       });
   };
   return (

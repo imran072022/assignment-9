@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import { AuthContext } from "../Contexts/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
         </div>
 
         {/* Hamburger menu for mobile */}
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white focus:outline-none"
@@ -53,7 +54,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex items-center gap-5 text-white">
+        <ul className="hidden md:flex items-center gap-5 text-white">
           <li>
             <NavLink
               to="/"
@@ -126,7 +127,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <ul className="flex flex-col gap-3 mt-3 text-white lg:hidden bg-[#1E314B] p-4 rounded-md">
+        <ul className="flex flex-col gap-3 mt-3 text-white md:hidden bg-[#1E314B] p-4 rounded-md">
           {user && (
             <li className="flex justify-center mb-2">
               <Link to="/my-profile" onClick={() => setIsOpen(false)}>
@@ -192,8 +193,12 @@ const Navbar = () => {
             <li>
               <button
                 onClick={() => {
-                  logOut();
-                  setIsOpen(false);
+                  logOut()
+                    .then(() => {
+                      toast.success("Signed out successfully!");
+                      setIsOpen(false);
+                    })
+                    .catch(() => toast.error("Sign out failed!"));
                 }}
                 className="bg-gradient-to-r from-[#00A3FF] to-[#00FFC6] px-6 py-2 rounded-md text-white font-medium hover:scale-105 transition-transform block text-center cursor-pointer w-full"
               >
